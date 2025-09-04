@@ -41,7 +41,8 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Features */}
+          {/* Features - COMMENTED OUT FOR CLEAN DEPLOYMENT */}
+          {/*
           <div>
             <h3 className="font-subheading text-foreground mb-4">Features</h3>
             <ul className="space-y-2 text-sm">
@@ -67,6 +68,7 @@ export function Footer() {
               </li>
             </ul>
           </div>
+          */}
         </div>
 
         <div className="border-t border-border mt-8 pt-8 text-center">
