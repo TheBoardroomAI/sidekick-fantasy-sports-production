@@ -1,0 +1,254 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  /* Updated to SideKick brand colors - Premium Dark background, Authority Blue, Success Green, Action Orange */
+  --background: oklch(0.071 0 0); /* Premium Dark #121212 */
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.098 0 0); /* Slightly lighter than background for cards */
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.098 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.565 0.191 264.376); /* Authority Blue #1E5EFF */
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.769 0.188 162.48); /* Success Green #00D37F */
+  --accent-foreground: oklch(0.071 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.565 0.191 264.376); /* Authority Blue for focus rings */
+  --chart-1: oklch(0.565 0.191 264.376); /* Authority Blue */
+  --chart-2: oklch(0.769 0.188 162.48); /* Success Green */
+  --chart-3: oklch(0.696 0.17 70.08); /* Action Orange #FF7A00 */
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.098 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.565 0.191 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.565 0.191 264.376);
+
+  /* Added SideKick brand-specific color variables */
+  --sidekick-authority-blue: oklch(0.565 0.191 264.376); /* #1E5EFF */
+  --sidekick-success-green: oklch(0.769 0.188 162.48); /* #00D37F */
+  --sidekick-action-orange: oklch(0.696 0.17 70.08); /* #FF7A00 */
+  --sidekick-premium-dark: oklch(0.071 0 0); /* #121212 */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Added SideKick brand color utilities */
+  --color-sidekick-authority-blue: var(--sidekick-authority-blue);
+  --color-sidekick-success-green: var(--sidekick-success-green);
+  --color-sidekick-action-orange: var(--sidekick-action-orange);
+  --color-sidekick-premium-dark: var(--sidekick-premium-dark);
+
+  /* Updated font family variables to use brand fonts */
+  --font-sans: var(--font-open-sans);
+  --font-serif: var(--font-montserrat);
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Added brand-specific typography classes */
+  .font-headline {
+    font-family: var(--font-montserrat);
+    font-weight: 700;
+  }
+
+  .font-subheading {
+    font-family: var(--font-montserrat);
+    font-weight: 600;
+  }
+
+  .font-body {
+    font-family: var(--font-open-sans);
+    font-weight: 400;
+  }
+
+  /* Optimized multi-color rolling light effect for better performance */
+  .rolling-light-text {
+    background: linear-gradient(90deg, #1e5eff 0%, #00d37f 50%, #ff7a00 100%);
+    background-size: 200% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rolling-light 4s linear infinite;
+    will-change: background-position;
+  }
+}
+
+@layer utilities {
+  /* Blue to Green gradient (for blue buttons) */
+  .bg-gradient-blue-green {
+    background: linear-gradient(135deg, #1e5eff 0%, #00d37f 100%);
+  }
+
+  .hover\:bg-gradient-blue-green:hover {
+    background: linear-gradient(135deg, #1e5eff 0%, #00d37f 100%);
+    opacity: 0.9;
+  }
+
+  /* Green to Blue gradient (for green buttons) */
+  .bg-gradient-green-blue {
+    background: linear-gradient(135deg, #00d37f 0%, #1e5eff 100%);
+  }
+
+  .hover\:bg-gradient-green-blue:hover {
+    background: linear-gradient(135deg, #00d37f 0%, #1e5eff 100%);
+    opacity: 0.9;
+  }
+
+  /* Red to Orange gradient (for red buttons) */
+  .bg-gradient-red-orange {
+    background: linear-gradient(135deg, #ff4444 0%, #ff7a00 100%);
+  }
+
+  .hover\:bg-gradient-red-orange:hover {
+    background: linear-gradient(135deg, #ff4444 0%, #ff7a00 100%);
+    opacity: 0.9;
+  }
+
+  /* Override solid color backgrounds when gradients are applied */
+  .bg-gradient-blue-green,
+  .bg-gradient-green-blue,
+  .bg-gradient-red-orange {
+    background-color: transparent !important;
+  }
+
+  /* Added glow effects for button hover states */
+  /* Button glow effects for enhanced hover feedback */
+  .glow-blue:hover {
+    box-shadow: 0 0 20px rgba(30, 94, 255, 0.6), 0 0 40px rgba(30, 94, 255, 0.4), 0 0 60px rgba(30, 94, 255, 0.2);
+    transform: translateY(-2px);
+  }
+
+  .glow-green:hover {
+    box-shadow: 0 0 20px rgba(0, 211, 127, 0.6), 0 0 40px rgba(0, 211, 127, 0.4), 0 0 60px rgba(0, 211, 127, 0.2);
+    transform: translateY(-2px);
+  }
+
+  .glow-orange:hover {
+    box-shadow: 0 0 20px rgba(255, 122, 0, 0.6), 0 0 40px rgba(255, 122, 0, 0.4), 0 0 60px rgba(255, 122, 0, 0.2);
+    transform: translateY(-2px);
+  }
+
+  .glow-gradient-blue-green:hover {
+    box-shadow: 0 0 20px rgba(30, 94, 255, 0.4), 0 0 40px rgba(0, 211, 127, 0.3), 0 0 60px rgba(30, 94, 255, 0.2);
+    transform: translateY(-2px);
+  }
+
+  .glow-gradient-green-blue:hover {
+    box-shadow: 0 0 20px rgba(0, 211, 127, 0.4), 0 0 40px rgba(30, 94, 255, 0.3), 0 0 60px rgba(0, 211, 127, 0.2);
+    transform: translateY(-2px);
+  }
+
+  .glow-gradient-red-orange:hover {
+    box-shadow: 0 0 20px rgba(255, 68, 68, 0.4), 0 0 40px rgba(255, 122, 0, 0.3), 0 0 60px rgba(255, 68, 68, 0.2);
+    transform: translateY(-2px);
+  }
+
+  /* Default button glow for primary buttons */
+  .glow-default:hover {
+    box-shadow: 0 0 20px rgba(30, 94, 255, 0.5), 0 0 40px rgba(30, 94, 255, 0.3), 0 0 60px rgba(30, 94, 255, 0.1);
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes rolling-light {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
